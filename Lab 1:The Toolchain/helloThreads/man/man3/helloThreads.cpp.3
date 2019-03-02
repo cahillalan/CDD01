@@ -1,0 +1,55 @@
+.TH "helloThreads.cpp" 3 "Wed Feb 13 2019" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+helloThreads.cpp \- A Documented file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcall_from_thread\fP (int tid)"
+.br
+.RI "This function will be called from a thread\&. "
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.RI "The eponymous main function\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A Documented file\&. 
+
+You should document all your files using doxygen\&. NOTE: Any files not documented in this manner will not be accepted! 
+.SH "Function Documentation"
+.PP 
+.SS "void call_from_thread (int tid)"
+
+.PP
+This function will be called from a thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItid\fP the thread number
+.RE
+.PP
+tid is assigned a number when the thread is created\&. Any function created by a thread must have this function signature The function prints out its thread id\&. 
+.SS "int main ()"
+
+.PP
+The eponymous main function\&. Forks off 10 threads using a vector of num_threads std::thread objects\&. Then joins each thread with the main thread and exits < Launch a group of threads
+.PP
+< Join the threads with the main thread 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

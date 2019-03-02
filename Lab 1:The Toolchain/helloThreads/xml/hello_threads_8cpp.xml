@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="hello_threads_8cpp" kind="file" language="C++">
+    <compoundname>helloThreads.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">vector</includes>
+    <incdepgraph>
+      <node id="0">
+        <label>helloThreads.cpp</label>
+        <link refid="hello_threads_8cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+      <node id="1">
+        <label>iostream</label>
+      </node>
+      <node id="2">
+        <label>thread</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="hello_threads_8cpp_1aaa9737d3fab5d0879ac819e178269326" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>static const int num_threads</definition>
+        <argsstring></argsstring>
+        <name>num_threads</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>The number of threads we intend to create. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="helloThreads.cpp" line="14" column="1" bodyfile="helloThreads.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hello_threads_8cpp_1ae0dbf7b3f4f43153450248b3ed6e6b51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void call_from_thread</definition>
+        <argsstring>(int tid)</argsstring>
+        <name>call_from_thread</name>
+        <param>
+          <type>int</type>
+          <declname>tid</declname>
+        </param>
+        <briefdescription>
+<para>This function will be called from a thread. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the thread number</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+tid is assigned a number when the thread is created. Any function created by a thread must have this function signature The function prints out its thread id. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="helloThreads.cpp" line="25" column="1" bodyfile="helloThreads.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="hello_threads_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+<para>The eponymous main function. </para>        </briefdescription>
+        <detaileddescription>
+<para>Forks off 10 threads using a vector of num_threads std::thread objects. Then joins each thread with the main thread and exits </para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Launch a group of threads</para><para>&lt; Join the threads with the main thread </para>        </inbodydescription>
+        <location file="helloThreads.cpp" line="37" column="1" bodyfile="helloThreads.cpp" bodystart="37" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A Documented file. </para>    </briefdescription>
+    <detaileddescription>
+<para>You should document all your files using doxygen. NOTE: Any files not documented in this manner will not be accepted! </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_threads<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hello_threads_8cpp_1ae0dbf7b3f4f43153450248b3ed6e6b51" kindref="member">call_from_thread</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Launched<sp/>by<sp/>thread<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tid<sp/>&lt;&lt;<sp/>std::endl;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="hello_threads_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::thread&gt;<sp/>vt(num_threads);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(std::thread&amp;<sp/>t:<sp/>vt){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t=std::thread(<ref refid="hello_threads_8cpp_1ae0dbf7b3f4f43153450248b3ed6e6b51" kindref="member">call_from_thread</ref>,i++);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Launched<sp/>from<sp/>the<sp/>main\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>v<sp/>:vt){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.join();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="helloThreads.cpp"/>
+  </compounddef>
+</doxygen>
