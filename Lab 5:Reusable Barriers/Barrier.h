@@ -48,6 +48,7 @@
 class Barrier{
   int numThreads =0;
   int count=0;
+  /*! declaration of three semaphore for use in Barrier.cpp */
   std::shared_ptr<Semaphore> mutexLock;
   std::shared_ptr<Semaphore> semOne;
   std::shared_ptr<Semaphore> semTwo;

@@ -11,16 +11,17 @@
 /*! displays a message first*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   sleep(delay);
+  
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
-  /*! Sends a signal*/
+  /*!Semaphore Sends a signal*/
   theSemaphore->Signal();
 }
 /*! displays a message second*/
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  /*! Waits for a signal*/
+  /*! Semaphore Waits for a signal*/
   theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";

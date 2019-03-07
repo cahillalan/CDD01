@@ -51,14 +51,17 @@ Barrier::Barrier(int numThreads) :numThreads(numThreads),
  semTwo(std::shared_ptr<Semaphore>(new Semaphore(1))),
 mutexLock(std::shared_ptr<Semaphore>(new Semaphore(1))){
 }
+/*! semTwo and mutexLock are initialised as 1*/
 Barrier:: ~Barrier() {}				   
 void Barrier::wait() {
   semTwo->Wait();
-
+  /*! semTwo waits for signal to allow it through,first to arrive is allowed through due to semTwo being initialised to 1*/
   mutexLock->Wait();
+  /*! mutexLock creats a mutual exclusion on count++ */
   count ++;
   mutexLock->Signal();
-
+  /*! if the count is equal to the num of threads then semOne is signalled allowing the threads through the second block in the barrier */
+  /*! otherwise semTwo is signalled allowing another thread into the barrier */
   if(count == numThreads)
 		{
 		  semOne->Signal();
@@ -70,10 +73,12 @@ void Barrier::wait() {
  
 
   semOne->Wait();
+  /*! mutexLock creats mutual exclusion on count -- */
   mutexLock->Wait();
   count--;
   mutexLock->Signal();
-  
+  /*! if count is equla to 0 the semTwo is signalled allowing the threads to leave the bottom block of the barrier. */
+  /*! otherwise semOne is signalled to allow another through*/
   if (count == 0){
     semTwo->Signal();
   }
@@ -83,6 +88,7 @@ void Barrier::wait() {
   
   semTwo->Wait();
   semTwo->Signal();
+  /*! semTwo is signalled one last time in order to ensure the barrier is reusable by reinitialising semTow to 1 for the next time */
   
 
 }

@@ -1,10 +1,15 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+1. No licence
+2. Alan Cahill C00174533
+3. No installation needed 
+4. No known dependencies
+5. Everything completed
+6. a. Main.ccp - this contains c++ code for the main executing file. 
+   b. Main.o - object file for Main.cpp
+   c. Semaphore.cpp - c++ code for the implementation of Semaphores
+   d. Semaphore.h   - c++ for the Semaphore header file
+   e. makefile - makefile code for the project
+   f. excecutable - the generated executable file for the project
+   g. Barrier.cpp - c++ code for the implementation of a Barrier
+   h. Barrier.h - c++ code for the Barrier header file
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+7. This project releases 20 threads with a Barrier implemented that wont allow any threads through untill all 20 threads arrive.The barrier also ensure that all 20 threadsperform the same action for each iteration. The barrier has been implemented to be reusable in a loop or other repetitive algorithms.  

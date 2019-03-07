@@ -16,7 +16,7 @@ int sharedVariable=0;
 */
 /*! displays a message that is split in to 2 sections to show how a rendezvous works*/
 void updateTask(std::shared_ptr<Semaphore> firstSem, int numUpdates){
-
+  /*! The semaphore firstSem is assigned to one to begin with, When a threads passes through itr decremenst the semaphore blocking any other thread from passing through it. */
   firstSem->Wait();
  
   for(int i=0;i<numUpdates;i++){
@@ -24,6 +24,7 @@ void updateTask(std::shared_ptr<Semaphore> firstSem, int numUpdates){
     sharedVariable++;
   }
   firstSem->Signal();
+  /*! once fished the thread signals the semaphore to allow the other thread to pass through and edit the mutual variable. */
 }
 
 

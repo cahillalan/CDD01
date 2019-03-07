@@ -15,6 +15,9 @@ void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  sec
   std::cout <<"Task One has arrived! "<< std::endl;
   secondSem->Signal();
   firstSem->Wait();
+
+  /*! This is the rendeavous point for task one*/
+  /*! The Semaphore signals it has arrived and then waits for the other semaphore to arrive if it is 1st to arrive */
  
   //THIS IS THE RENDEZVOUS POINT!
   std::cout << "Task One has left!"<<std::endl;
@@ -23,6 +26,8 @@ void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  sec
 void taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> secondSem, int delay){
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   std::cout <<"Task Two has arrived "<<std::endl;
+  /*! This is the rendeavous point for task two*/
+  /*! The Semaphore signals it has arrived and then waits for the other semaphore to arrive if it is 1st to arrive */
   firstSem->Signal();
   secondSem->Wait();
   std::cout << "Task Two has left "<<std::endl;
